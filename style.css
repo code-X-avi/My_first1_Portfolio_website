@@ -1,0 +1,229 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.navbar {
+
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 25px 9%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    visibility: hidden;
+    opacity: 0;
+    animation: show-navbar 3s linear forwards;
+    animation-delay: 0.5s;
+}
+
+@keyframes show-navbar{
+    100%{
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+
+.navbar .logo {
+    font-size: 30px;
+    font-weight: 700;
+    color: rgb(138, 99, 201);
+    font-family: 'Lucida Sans', Arial, sans-serif
+}
+
+.navbar ul {
+    display: flex;
+}
+
+.navbar ul li {
+    list-style: none;
+    margin: 25px 20px;
+    transition: 0.5s;
+}
+
+.navbar ul li a {
+    font-size: 20px;
+    font-weight: 500;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+
+.navbar ul li:hover a,
+.navbar ul li.active a {
+    color: rgb(21, 196, 108)
+}
+
+.home {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    padding: 60px 9% 0;
+    color: rgb(177, 221, 247);
+    visibility: hidden;
+    opacity: 0;
+    animation: show-navbar 3s linear forwards;
+    animation-delay: 0.5s;
+}
+
+
+.home-info h1 {
+    font-size: 55px;
+    color: rgb(240, 241, 241);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.home-info h2 {
+    display: inline-block;
+    font-size: 30px;
+    margin-top: 5px;
+    color: rgb(251, 255, 251);
+    font-family: sans-serif;
+   }
+
+.home-info h2 span {
+    position: relative;
+    display: inline-block;
+    color: transparent;
+    -webkit-text-stroke: 0.7px rgb(12, 241, 12);
+    animation: display-text 9s linear infinite;
+    animation-delay: calc(-3s * var(--i));
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+@keyframes display-text {
+
+    25%,
+    100% {
+        display: none;
+    }
+}
+
+.home-info h2 span::before {
+    content: attr(data-text);
+    position: absolute;
+    width: 0;
+    border-right: 2px solid rgb(12, 241, 12);
+    color: rgb(12, 241, 12);
+    white-space: nowrap;
+    overflow: hidden;
+    animation: fil-text 3s linear infinite;
+}
+
+@keyframes fil-text {
+
+    10%,
+    100% {
+        width: 0;
+    }
+
+    70%,
+    90% {
+        width: 100%;
+    }
+}
+
+.home-info p {
+    font-size: 15px;
+    margin: 10px 0 25px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+.home-info .btn-sci {
+    display: flex;
+    align-items: center;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 30px;
+    background: rgb(10, 236, 40);
+    border: 2px solid rgb(10, 236, 4);
+    border-radius: 25px;
+    box-shadow: 0 0 10px rgb(10, 236, 40);
+    font-size: 17px;
+    color: black;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: transparent;
+    color: rgb(10, 236, 40);
+}
+
+.home-info .btn-sci .sci {
+    margin-left: 25px;
+}
+
+
+.home-info .btn-sci .sci a {
+    display: inline-flex;
+    padding: 6px;
+    border-radius: 50%;
+    border: 2px solid rgb(1, 94, 13);
+    font-size: 23px;
+    color: rgb(10, 236, 40);
+    margin: 0 5px;
+    transition: 0.3s;
+}
+
+.home-info .btn-sci .sci a:hover {
+    background: rgba(28, 250, 84, 0.808);
+    color: black;
+    box-shadow: 0 0 15px rgba(28, 250, 84, 0.808);
+    transform: scale(1.1);
+}
+
+.img-item img {
+    width: 30vw;
+    height: 20vw;
+    background: red;
+    background: transparent;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgb(79, 30, 214);
+    transition: 0.5s;
+    margin-left: 60px
+}
+
+.img-item img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgb(79, 30, 214);
+
+}
+
+.bars-animation {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    z-index: -1;
+}
+
+.bars-animation .bar {
+    width: 100%;
+    height: 100%;
+    background: rgb(13, 1, 24);
+    transform: translateY(-100%);
+    animation: show-bars 0.5s ease-in-out forwards;
+    animation-delay: calc(0.1s * var(--i));
+}
+
+@keyframes show-bars {
+    100% {
+        transform: translateY(0%);
+    }
+}
